@@ -7,18 +7,22 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
     <link rel="stylesheet" href="style.css">
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="shortcut icon" href="assets/Favlog.png" type="image/x-icon">
 </head>
+
 <body class="max-w-[1920px] mx-auto inter-font">
     <header>
 
         <!-- Navigation Section -->
 
-        <nav class="navbar flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-16 lg:px-24 py-3.5 bg-[#15803D] gap-4">
+        <nav class="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-16 lg:px-24 py-5 md:py-3.5 bg-[#15803D] gap-4">
+            
             <div class="nav-left">
                 <h3 class="text-white text-xl font-bold">Green Earth</h3>
             </div>
@@ -32,7 +36,7 @@
             </div>
 
             <div class="nav-right">
-                <button class="bg-[#FACC15] px-5 py-1.5 sm:py-2 rounded-full text-[#15803D] text-sm sm:text-base font-medium">
+                <button class="bg-[#FACC15] px-5 py-1.5 sm:py-2 rounded-full text-[#15803D] text-sm sm:text-base font-medium hover:bg-yellow-300 hover:cursor-pointer">
                     Plant a Tree
                 </button>
             </div>
@@ -43,28 +47,32 @@
         <div class="hero-container bg-[#CFF0DC]">
 
             <div class="hidden md:flex items-center justify-between">
+
                 <div>
                     <img src="assets/hero-leaf1.png" class="w-full">
                 </div>
+
                 <div class="text-center">
                     <h1 class="text-4xl font-bold">Plant a Tree, Grow a Future</h1>
                     <p class="text-base my-6">
                         Join our mission to plant 1 million trees and make the Earth greener for future generations.
                     </p>
-                    <button class="bg-[#FACC15] px-5 py-2 rounded-full text-[#15803D] text-base font-medium">Get Involved</button>
+                    <button class="bg-[#FACC15] px-5 py-2 rounded-full text-[#15803D] text-base font-medium hover:bg-yellow-300 hover:cursor-pointer">Get Involved</button>
                 </div>
+
                 <div>
                     <img src="assets/hero-leaf2.png" class="w-full">
                 </div>
             </div>
 
             <div class="block md:hidden">
+
                 <div class="text-center px-4 py-8">
                     <h1 class="text-2xl sm:text-3xl font-bold">Plant a Tree, Grow a Future</h1>
                     <p class="text-sm my-6">
                         Join our mission to plant 1 million trees and make the Earth greener for future generations.
                     </p>
-                    <button class="bg-[#FACC15] px-5 py-1.5 sm:py-2 rounded-full text-[#15803D] text-sm font-medium">Get Involved</button>
+                    <button class="bg-[#FACC15] px-5 py-1.5 sm:py-2 rounded-full text-[#15803D] text-sm font-medium hover:bg-yellow-300 hover:cursor-pointer">Get Involved</button>
                 </div>
 
                 <div class="flex items-center justify-between">
@@ -83,16 +91,78 @@
 
         <!-- Challenge Section -->
 
+        <section class="max-w-[1650px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 pt-12 md:pt-20">
+
+            <h2 class="text-center text-xl md:text-2xl font-semibold mb-8">Choose Your Trees</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+
+                <!-- Categories Section -->
+
+                <aside>
+
+                    <h3 class="font-semibold md:text-lg  mb-4">Categories</h3>
+
+                    <div id="categories-container" class="text-sm md:text-base flex flex-col gap-1">
+
+                    </div>
+                </aside>
+
+                <!-- Cards Section -->
+
+                <div class="md:col-span-4">
+                    
+                    <div id="spinner" class="hidden flex items-center justify-center">
+                        <span class="loading loading-dots loading-sm text-green-700 py-8"></span>
+                    </div>
+
+                    <div id="cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    </div>
+                </div>
+
+                <!-- Cart Section -->
+
+                <aside class="bg-white p-4 rounded-lg min-h-50">
+
+                    <h3 class="font-semibold md:text-lg mb-4">Your Cart</h3>
+
+                    <ul class="cart-list text-sm space-y-2">
+
+                    </ul>
+                </aside>
+        </section>
+
+        <!-- Modal Section -->
+
+        <dialog id="card_modal" class="modal modal-middle">
+
+            <div class="modal-box">
+
+                <div id="details-container">
+                    
+                </div>
+
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
 
         <!-- Campaign Section -->
 
         <section class="campaign max-w-4xl mx-auto py-12 md:py-20">
+
             <h2 class="text-center text-xl md:text-2xl font-semibold mb-8">About the Campaign</h2>
 
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 px-5">
+
                 <div class="md:w-1/2">
                     <img src="assets/about.png" class="w-full">
                 </div>
+
                 <div class="md:w-1/2 text-sm md:text-base">
                     <p>
                         Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
@@ -111,10 +181,15 @@
         <!-- Impact Section -->
 
         <section class="impact bg-[#cff0dc] px-16 md:px-32 py-12 md:py-20">
+
             <h2 class="text-center text-xl md:text-2xl font-semibold mb-8">Our Impact</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
+
                 <div class="card bg-white w-90 p-6 text-center rounded-xl">
+
+                <!-- Respected viewers, kindly decrease the value of w-90 if you encounter any issues with responsiveness. -->
+
                     <h2 class="text-xl md:text-2xl font-semibold">500K+</h2>
                     <p class="text-sm md:text-base mt-2.5">
                         Trees Planted
@@ -140,6 +215,7 @@
         <!-- Form Section -->
 
         <section class="form-container bg-[#166534] px-5 py-12 md:py-20">
+
             <h2 class="text-center text-white text-xl md:text-2xl font-semibold mb-8">Plant a Tree Today</h2>
 
             <form class="form max-w-[630px] mx-auto bg-[#15803D] rounded-lg p-4 md:p-8 flex flex-col gap-4">
@@ -165,5 +241,7 @@
             &copy; 2025 Green Earth. All Rights Reserved.
         </p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
