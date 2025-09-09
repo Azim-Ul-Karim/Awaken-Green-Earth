@@ -112,7 +112,7 @@ const displayCategoryTree = (plants) => {
             </div>
 
             <div class="p-4">
-                <h4 onclick = "loadPlantDetail(${plant.id})" class="font-semibold text-sm">${plant.name}</h4>
+                <h4 onclick = "loadPlantDetail(${plant.id})" class="font-semibold text-sm hover:cursor-pointer">${plant.name}</h4>
 
                 <p class="text-xs py-3 h-18 md:h-25 flex items-center">
                     ${plant.description}
